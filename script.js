@@ -64,15 +64,18 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "ការណែនាំផ្សេងៗ",
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
       links: [
+        // --- Item ដែលមានស្រាប់ ---
         { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
         {
           name: "របៀបសុំច្បាប់ឈប់សម្រាក",
-          url: "https://www.youtube.com/embed/VIDEO_ID4",
+          url: "https://www.youtube.com/embed/VIDEO_ID8",
         },
-        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM?si=fmBpk_ANZ-0Yht3W" },
+        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://www.youtube.com/embed/VIDEO_ID9" },
+
+        // --- បន្ថែម Item ថ្មីចំនួន 5 នៅត្រង់នេះ ---
+        { name: "របៀបបង្កើតគណនីប្រព័ន្ធគ្រប់គ្រងវត្តមាន(ឆាប់ៗនេះ)", url: "#" },
       ],
     },
-  };
 
   const groupNav = document.getElementById("group-nav");
   const linkBox = document.getElementById("link-box");
