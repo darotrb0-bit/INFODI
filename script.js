@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sunIcon = document.querySelector(".sun-icon");
   const moonIcon = document.querySelector(".moon-icon");
 
-  // ទិន្នន័យ Link ទាំងអស់ (ត្រឡប់ទៅទម្រង់ដើម)
+  // ទិន្នន័យ Link ទាំងអស់
   const data = {
     bot: {
       name: "Telegram Bot",
@@ -38,11 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
           url: "https://t.me/roeurnsreyneth",
           role: "រដ្ឋបាល និង បច្ចេកទេស",
         },
-        {
-          name: "ប៉ី ថាវរី",
-          url: "https://t.me/Peythavry",
-          role: "ជំនួយរដ្ឋបាល",
-        },
+        { name: "ប៉ី ថាវរី", url: "https://t.me/Peythavry", role: "ជំនួយរដ្ឋបាល" },
         {
           name: "សយ គឹមសុដានី",
           url: "https://t.me/Soykeomsodany",
@@ -60,32 +56,25 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
       links: [{ name: "ក្រុមការងារ", url: "https://t.me/ITSupportKR" }],
     },
-   guides: {
+    guides: {
       name: "ការណែនាំផ្សេងៗ",
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
       links: [
-        // --- Item ដែលមានស្រាប់ ---
         { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
         {
-          name: "របៀបសុំច្បាប់ឈប់សម្រាប់",
+          name: "របៀបសុំច្បាប់ឈប់សម្រាក",
           url: "https://youtu.be/ZeXD2ibq6co?si=hCffpKldl28vmGip", 
         },
-        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM" },
-
-        // --- បន្ថែម Item ថ្មីចំនួន 5 នៅត្រង់នេះ ---
-        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
-        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
-        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
-        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
-        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
+        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM?si=fmBpk_ANZ-0Yht3W" },
       ],
     },
+  };
 
   const groupNav = document.getElementById("group-nav");
   const linkBox = document.getElementById("link-box");
   const searchInput = document.getElementById("searchInput");
   const backToTopBtn = document.getElementById("backToTopBtn");
-  let activeGroupKey = "bot";
+  let activeGroupKey = "bot"; 
 
   if (!groupNav || !linkBox) {
     console.error(
@@ -94,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // មុខងារសម្រាប់បង្ហាញ Links (ត្រឡប់ទៅទម្រង់ដើម)
+  // មុខងារសម្រាប់បង្ហាញ Links
   function renderLinks(groupKey) {
     const group = data[groupKey];
     if (!group) return;
@@ -122,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     linkBox.innerHTML = linksHtml;
   }
 
-  // មុខងារសម្រាប់បង្កើតប៊ូតុង Navigation
+  // មុខងារสำหรับสร้างប៊ូតុង Navigation
   function renderNavButtons() {
     let buttonsHtml = "";
     for (const key in data) {
@@ -153,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // --- ផ្នែកគ្រប់គ្រង Theme (Dark/Light Mode) ---
+  // --- ส่วนจัดการ Theme (Dark/Light Mode) ---
   const updateThemeIcons = (isDarkMode) => {
     sunIcon.style.display = isDarkMode ? "none" : "block";
     moonIcon.style.display = isDarkMode ? "block" : "none";
@@ -186,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   themeToggle.addEventListener("click", toggleTheme);
 
-  // --- ផ្នែកគ្រប់គ្រង Search & Back to Top ---
+  // --- ส่วนจัดการ Search & Back to Top ---
   function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
     const navButtons = document.querySelectorAll(".nav-button");
@@ -242,15 +231,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
   searchInput.addEventListener("input", handleSearch);
   window.addEventListener("scroll", handleScroll);
   backToTopBtn.addEventListener("click", scrollToTop);
 
-  // ចាប់ផ្តើមដំណើរការទាំងអស់
+  // เริ่มการทำงานทั้งหมด
   function initializeApp() {
     renderNavButtons();
     renderLinks(activeGroupKey);
