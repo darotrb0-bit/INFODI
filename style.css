@@ -1,4 +1,5 @@
-/* ការកំណត់ជាគ្រឹះ (Light Theme) */
+/* --- កំណត់អថេរពណ៌ (CSS Variables) --- */
+/* 🎨 សម្រាប់ផ្ទៃភ្លឺ (Light Theme) */
 :root {
   --primary-color: #0056b3;
   --primary-light: #e6f0ff;
@@ -8,13 +9,14 @@
   --text-secondary: #5f6368;
   --border-color: #dee2e6;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --disabled-color: #f0f0f0;
   /* ពណ៌ទឹកក្រូចសម្រាប់ Hover */
   --orange-hover-bg: #fff7ed;
   --orange-hover-text: #f97316;
   --orange-hover-border: #f97316;
 }
 
-/* ការកំណត់ពណ៌សម្រាប់ Dark Theme */
+/* 🎨 សម្រាប់ផ្ទៃងងឹត (Dark Theme) */
 body.dark-theme {
   --primary-color: #3b82f6;
   --primary-light: #2563eb;
@@ -24,12 +26,14 @@ body.dark-theme {
   --text-secondary: #9ca3af;
   --border-color: #374151;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --disabled-color: #2a2a2a;
   /* ពណ៌ទឹកក្រូចសម្រាប់ Hover ពេល Dark Mode */
   --orange-hover-bg: rgba(249, 115, 22, 0.15);
   --orange-hover-text: #f97316;
   --orange-hover-border: #f97316;
 }
 
+/* --- ការកំណត់គ្រឹះ (Global Styles & Resets) --- */
 * {
   margin: 0;
   padding: 0;
@@ -51,6 +55,7 @@ body {
   transition: color 0.3s ease;
 }
 
+/* --- រចនាសម្ព័ន្ធหลัก (Main Layout) --- */
 .app-container {
   width: 98%;
   max-width: 800px;
@@ -64,7 +69,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* រចនាប័ទ្ម Header */
+/* --- រចនាប័ទ្ម Header --- */
 .main-header {
   position: relative;
   text-align: center;
@@ -111,16 +116,42 @@ body {
   width: 20px;
   height: 20px;
 }
-.moon-icon {
-  display: none;
+.moon-icon { display: none; }
+
+/* ប្រអប់ស្វែងរក */
+.search-container {
+  margin-top: 20px;
+  padding: 0 16px;
+}
+#searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1em;
+  font-family: "Kantumruy Pro", sans-serif;
+  color: var(--text-primary);
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+/* ធ្វើឱ្យมีเงาสีฟ้าពេលចុចលើប្រអប់ស្វែងរកด้วย Keyboard */
+#searchInput:focus-visible {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+#searchInput::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
 }
 
+/* --- រចនាប័ទ្មเนื้อหาหลัก --- */
 .content {
   padding: 20px;
   flex-grow: 1;
 }
 
-/* រចនាប័ទ្មប៊ូតុង Group Navigation */
+/* ប៊ូតុង Navigation តាមกลุ่ม */
 .group-nav {
   position: relative;
   display: flex;
@@ -131,11 +162,9 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 .group-nav::-webkit-scrollbar {
   display: none;
 }
-
 .nav-button {
   display: flex;
   flex-direction: column;
@@ -157,31 +186,26 @@ body {
   text-align: center;
   position: relative;
 }
-
 .nav-button svg {
   width: 24px;
   height: 24px;
   color: var(--text-secondary);
   transition: color 0.3s ease;
 }
-
 .nav-button:hover {
   background-color: var(--orange-hover-bg);
   color: var(--orange-hover-text);
 }
-
 .nav-button:hover svg {
   color: var(--orange-hover-text);
 }
-
 .nav-button.active {
   color: var(--primary-color);
 }
-
 .nav-button.active svg {
   color: var(--primary-color);
 }
-
+/* បន្ទាត់គូសក្រោមที่มีចលនា */
 .nav-button::after {
   content: "";
   position: absolute;
@@ -195,27 +219,26 @@ body {
   transform-origin: center;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .nav-button.active::after {
   transform: scaleX(1);
 }
 
-/* រចនាប័ទ្មប្រអប់បង្ហាញ Link */
+/* ប្រអប់แสดงลิงก์ */
 .link-box {
   animation: fadeIn 0.5s ease;
 }
-
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.loading-indicator, .no-results {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 40px 20px;
+  font-size: 1.1em;
 }
 
+/* រចនាប័ទ្ម Link Item ធម្មតា */
 .link-item {
   display: flex;
   align-items: center;
@@ -229,13 +252,11 @@ body {
   border: 1px solid var(--border-color);
   background-color: var(--card-bg);
 }
-
 .link-item:hover {
   background-color: var(--orange-hover-bg);
   border-color: var(--orange-hover-border);
   transform: scale(1.02);
 }
-
 .link-item .icon-wrapper {
   background-color: var(--primary-light);
   color: var(--primary-color);
@@ -248,23 +269,16 @@ body {
   justify-content: center;
   transition: all 0.3s ease;
 }
-
 .link-item .icon-wrapper svg {
   width: 20px;
   height: 20px;
 }
-
-/* រចនាប័ទ្មសម្រាប់ឈ្មោះ និង តួនាទី */
 .link-item-details {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-
-.link-item-name {
-  font-weight: 500;
-}
-
+.link-item-name { font-weight: 500; }
 .link-item-role {
   font-size: 0.8em;
   font-weight: 400;
@@ -272,7 +286,7 @@ body {
   transition: color 0.3s ease;
 }
 
-/* រចនាប័ទ្ម Footer */
+/* --- រចនាប័ទ្ម Footer --- */
 .app-footer {
   text-align: center;
   padding: 20px;
@@ -280,7 +294,6 @@ body {
   margin-top: auto;
   transition: border-color 0.3s ease;
 }
-
 .app-footer a {
   display: inline-flex;
   align-items: center;
@@ -295,13 +308,11 @@ body {
   transition: all 0.3s ease;
   border: 1px solid transparent;
 }
-
 .app-footer a svg {
   width: 16px;
   height: 16px;
   transition: transform 0.3s ease;
 }
-
 .app-footer a:hover {
   color: var(--orange-hover-text);
   background-color: var(--orange-hover-bg);
@@ -309,76 +320,115 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .app-footer a:hover svg {
   transform: rotate(-15deg);
 }
 
-/* កំណត់ពណ៌សម្រាប់ Dark Mode */
-body.dark-theme .link-item .icon-wrapper {
-  background-color: #4a2c0f;
-  color: #f97316;
-}
-
-body.dark-theme .main-header h1 {
-  color: var(--text-primary);
-}
-
-body.dark-theme .theme-toggle-button {
-  background-color: #4b5563;
-  color: var(--text-primary);
-}
-
-body.dark-theme .sun-icon {
-  display: none;
-}
-body.dark-theme .moon-icon {
-  display: block;
-}
-
-body.dark-theme .link-item-role {
-  color: #4ade80;
-}
-
 /* --- រចនាប័ទ្មសម្រាប់មុខងារបន្ថែម --- */
 
-/* Search Box */
-.search-container {
-  margin-top: 20px;
-  padding: 0 16px;
+/* Video Item Card */
+.link-item.link-item--video {
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
 }
-
-#searchInput {
+.link-item--video .thumbnail-container {
   width: 100%;
-  padding: 12px 16px;
-  font-size: 1em;
-  font-family: "Kantumruy Pro", sans-serif;
-  color: var(--text-primary);
-  background-color: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  position: relative;
+}
+.link-item--video .thumbnail-container img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.link-item--video .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.link-item--video:hover .play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: rgba(249, 115, 22, 0.8);
+}
+.link-item--video .play-icon svg {
+  width: 30px;
+  height: 30px;
+  color: white;
+  margin-left: 4px;
+}
+.link-item--video .video-details {
+  padding: 14px;
+  width: 100%;
 }
 
-#searchInput:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px var(--primary-light);
+/* Video Modal */
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeInModal 0.3s ease;
+}
+.video-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+}
+.close-modal-btn {
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.close-modal-btn:hover { color: #ff5555; }
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Aspect Ratio 16:9 */
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-#searchInput::placeholder {
-  color: var(--text-secondary);
-  opacity: 0.8;
-}
-
-.no-results {
-  text-align: center;
-  color: var(--text-secondary);
-  padding: 40px 20px;
-  font-size: 1.1em;
-}
-
-/* Back to Top Button */
+/* ប៊ូតុង Back to Top */
 #backToTopBtn {
   display: none;
   position: fixed;
@@ -395,10 +445,91 @@ body.dark-theme .link-item-role {
   border-radius: 50%;
   font-size: 1.2em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+  transition: all 0.3s ease;
 }
-
 #backToTopBtn:hover {
   background-color: var(--orange-hover-text);
   transform: scale(1.1);
+}
+
+/* រចនាប័ទ្មสำหรับลิงก์ที่ยังไม่พร้อมใช้งาน (ឆាប់ៗនេះ) */
+.link-item[href="#"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--disabled-color);
+}
+.link-item[href="#"]:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border-color);
+  background-color: var(--disabled-color);
+}
+
+/* --- ការកំណត់សម្រាប់ Dark Mode (Overrides) --- */
+body.dark-theme .main-header h1 {
+  color: var(--text-primary);
+}
+body.dark-theme .theme-toggle-button {
+  background-color: #4b5563;
+  color: var(--text-primary);
+}
+body.dark-theme .sun-icon {
+  display: none;
+}
+body.dark-theme .moon-icon {
+  display: block;
+}
+body.dark-theme .link-item .icon-wrapper {
+  background-color: var(--primary-color);
+  color: var(--card-bg);
+}
+body.dark-theme .link-item-role {
+  color: #4ade80; /* สีเขียวสดใส */
+}
+
+/* --- ការปรับปรุงសម្រាប់អេក្រង់ទូរស័ព្ទ (Responsive) --- */
+/* សម្រាប់អេក្រង់តូចជាង 600px */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+  .app-container {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    padding-bottom: 60px;
+  }
+  .main-header {
+    padding: 16px;
+  }
+  .main-header h1 {
+    font-size: 1.3em;
+  }
+  .theme-toggle-button {
+    top: 16px;
+    right: 16px;
+  }
+  .content {
+    padding: 16px;
+  }
+  .nav-button {
+    padding: 10px 12px;
+    min-width: 100px;
+    font-size: 0.85em;
+  }
+  .link-item {
+    padding: 12px;
+    gap: 12px;
+  }
+  #backToTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+  }
+  .app-footer a {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
 }
