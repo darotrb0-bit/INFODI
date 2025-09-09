@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sunIcon = document.querySelector(".sun-icon");
   const moonIcon = document.querySelector(".moon-icon");
 
-  // ទិន្នន័យ Link ទាំងអស់
+  // ទិន្នន័យ Link ទាំងអស់ (ត្រឡប់ទៅទម្រង់ដើម)
   const data = {
     bot: {
       name: "Telegram Bot",
@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
       links: [{ name: "ក្រុមការងារ", url: "https://t.me/ITSupportKR" }],
     },
-    //======= Group ថ្មីដែលបានបន្ថែមចុងក្រោយ =======
     guides: {
       name: "ការណែនាំផ្សេងៗ",
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
@@ -68,19 +67,18 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
         {
           name: "របៀបសុំច្បាប់ឈប់សម្រាប់",
-          url: "https://youtube.com/shorts/FSbOUVv3SRI?si=MuR3lcz-t4trIlLj",
+          url: "https://youtube.com/shorts/FSbOUVv3SRI?si=MuR3lcz-t4trIlLj", // << ដាក់ Link YouTube ធម្មតាវិញ
         },
         { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្ត(ឆាប់ៗនេះ)", url: "#" },
       ],
     },
-    //===========================================
   };
 
   const groupNav = document.getElementById("group-nav");
   const linkBox = document.getElementById("link-box");
   const searchInput = document.getElementById("searchInput");
   const backToTopBtn = document.getElementById("backToTopBtn");
-  let activeGroupKey = "bot"; // រក្សាទុក group ដែលកំពុង active
+  let activeGroupKey = "bot";
 
   if (!groupNav || !linkBox) {
     console.error(
@@ -89,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // មុខងារសម្រាប់បង្ហាញ Links
+  // មុខងារសម្រាប់បង្ហាញ Links (ត្រឡប់ទៅទម្រង់ដើម)
   function renderLinks(groupKey) {
     const group = data[groupKey];
     if (!group) return;
@@ -136,10 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
         navButtons.forEach((btn) => btn.classList.remove("active"));
         button.classList.add("active");
 
-        activeGroupKey = button.dataset.group; // Update active group
+        activeGroupKey = button.dataset.group;
         renderLinks(activeGroupKey);
 
-        searchInput.value = ""; // Clear search input ពេលប្តូរ group
+        searchInput.value = "";
       });
     });
 
@@ -182,14 +180,11 @@ document.addEventListener("DOMContentLoaded", function () {
   themeToggle.addEventListener("click", toggleTheme);
 
   // --- ផ្នែកគ្រប់គ្រង Search & Back to Top ---
-
-  // មុខងារសម្រាប់ Search
   function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
     const navButtons = document.querySelectorAll(".nav-button");
 
     if (!searchTerm) {
-      // បើ search box ទំនេរ, បង្ហាញ group ដែល active ឡើងវិញ
       renderLinks(activeGroupKey);
       navButtons.forEach((btn) => {
         if (btn.dataset.group === activeGroupKey) {
@@ -199,7 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // ដោះ active class ចេញពីប៊ូតុងទាំងអស់ពេលកំពុង search
     navButtons.forEach((btn) => btn.classList.remove("active"));
 
     let searchResultsHtml = "";
@@ -229,7 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
       searchResultsHtml || "<p class='no-results'>រកមិនឃើញលទ្ធផលទេ។</p>";
   }
 
-  // មុខងារសម្រាប់ Back to Top Button
   function handleScroll() {
     if (
       document.body.scrollTop > 200 ||
@@ -242,11 +235,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function scrollToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
-  // បន្ថែម Event Listeners សម្រាប់មុខងារថ្មី
   searchInput.addEventListener("input", handleSearch);
   window.addEventListener("scroll", handleScroll);
   backToTopBtn.addEventListener("click", scrollToTop);
@@ -254,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ចាប់ផ្តើមដំណើរការទាំងអស់
   function initializeApp() {
     renderNavButtons();
-    renderLinks(activeGroupKey); // បង្ហាញ Group ដំបូង
+    renderLinks(activeGroupKey);
     initializeTheme();
   }
 
