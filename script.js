@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
         {
           name: "របៀបសុំច្បាប់ឈប់សម្រាប់",
-          url: "https://youtube.com/shorts/FSbOUVv3SRI?si=MuR3lcz-t4trIlLj", // << ដាក់ Link YouTube ធម្មតាវិញ
+          url: "https://youtu.be/ZeXD2ibq6co?si=Z9fMFWk05LCzTeDk", // << ដាក់ Link YouTube ធម្មតាវិញ
         },
         { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្ត(ឆាប់ៗនេះ)", url: "#" },
       ],
