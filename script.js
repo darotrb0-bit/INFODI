@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
         {
           name: "របៀបសុំច្បាប់ឈប់សម្រាក",
-          url: "https://www.youtube.com/embed/VIDEO_ID8",
+          url: "https://youtu.be/ZeXD2ibq6co?si=L24i-TNHESZUK-Rx",
         },
         { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://www.youtube.com/embed/VIDEO_ID9" },
 
