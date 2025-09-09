@@ -134,7 +134,6 @@ body {
   border-radius: 12px;
   transition: all 0.3s ease;
 }
-/* ធ្វើឱ្យมีเงาสีฟ้าពេលចុចលើប្រអប់ស្វែងរកด้วย Keyboard */
 #searchInput:focus-visible {
   outline: none;
   border-color: var(--primary-color);
@@ -205,7 +204,6 @@ body {
 .nav-button.active svg {
   color: var(--primary-color);
 }
-/* បន្ទាត់គូសក្រោមที่มีចលនា */
 .nav-button::after {
   content: "";
   position: absolute;
@@ -395,7 +393,7 @@ body {
 .modal-content {
   position: relative;
   width: 90%;
-  max-width: 800px;
+  max-width: 450px; /* កែសម្រាប់វីដេអូបញ្ឈរ */
 }
 .close-modal-btn {
   position: absolute;
@@ -411,7 +409,7 @@ body {
 .video-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* Aspect Ratio 16:9 */
+  padding-top: 177.78%; /* កែសម្រាប់ Aspect Ratio 9:16 */
   background-color: #000;
   border-radius: 8px;
   overflow: hidden;
@@ -452,7 +450,7 @@ body {
   transform: scale(1.1);
 }
 
-/* រចនាប័ទ្មสำหรับลิงก์ที่ยังไม่พร้อมใช้งาน (ឆាប់ៗនេះ) */
+/* រចនាប័ទ្មสำหรับลิงก์ที่ยังไม่พร้อมใช้งาน */
 .link-item[href="#"] {
   opacity: 0.6;
   cursor: not-allowed;
@@ -484,11 +482,10 @@ body.dark-theme .link-item .icon-wrapper {
   color: var(--card-bg);
 }
 body.dark-theme .link-item-role {
-  color: #4ade80; /* สีเขียวสดใส */
+  color: #4ade80;
 }
 
 /* --- ការปรับปรุงសម្រាប់អេក្រង់ទូរស័ព្ទ (Responsive) --- */
-/* សម្រាប់អេក្រង់តូចជាង 600px */
 @media (max-width: 600px) {
   body {
     padding: 0;
