@@ -38,7 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
           url: "https://t.me/roeurnsreyneth",
           role: "រដ្ឋបាល និង បច្ចេកទេស",
         },
-        { name: "ប៉ី ថាវរី", url: "https://t.me/Peythavry", role: "ជំនួយរដ្ឋបាល" },
+        {
+          name: "ប៉ី ថាវរី",
+          url: "https://t.me/Peythavry",
+          role: "ជំនួយរដ្ឋបាល",
+        },
         {
           name: "សយ គឹមសុដានី",
           url: "https://t.me/Soykeomsodany",
