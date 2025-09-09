@@ -60,18 +60,26 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
       links: [{ name: "ក្រុមការងារ", url: "https://t.me/ITSupportKR" }],
     },
-    guides: {
+   guides: {
       name: "ការណែនាំផ្សេងៗ",
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
       links: [
-           { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
-           {name: "របៀបសុំច្បាប់ឈប់សម្រាក", url: "https://youtu.be/ZeXD2ibq6co?si=Z9fMFWk05LCzTeDk",},
-        ​​​   { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM" },
-          { name: "របៀបរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
+        // --- Item ដែលមានស្រាប់ ---
+        { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
+        {
+          name: "របៀបសុំច្បាប់ឈប់សម្រាប់",
+          url: "https://youtu.be/ZeXD2ibq6co?si=hCffpKldl28vmGip", 
+        },
+        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្ត", url: "https://youtu.be/RNw7d4j9BPM" },
+
+        // --- បន្ថែម Item ថ្មីចំនួន 5 នៅត្រង់នេះ ---
+        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
+        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
+        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
+        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
+        { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
       ],
     },
-    },
-  };
 
   const groupNav = document.getElementById("group-nav");
   const linkBox = document.getElementById("link-box");
