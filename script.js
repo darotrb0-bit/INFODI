@@ -62,10 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
       links: [
         { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
         {
-          name: "របៀបសុំច្បាប់ឈប់សម្រាក",
-          url: "https://youtu.be/ZeXD2ibq6co?si=hCffpKldl28vmGip", 
+          name: "របៀបសុំច្បាប់ឈប់សម្រាប់",
+          url: "https://www.youtube.com/embed/VIDEO_ID4",
         },
-        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM?si=fmBpk_ANZ-0Yht3W" },
+        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្ត(ឆាប់ៗនេះ)", url: "#" },
       ],
     },
   };
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const linkBox = document.getElementById("link-box");
   const searchInput = document.getElementById("searchInput");
   const backToTopBtn = document.getElementById("backToTopBtn");
-  let activeGroupKey = "bot"; 
+  let activeGroupKey = "bot";
 
   if (!groupNav || !linkBox) {
     console.error(
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     linkBox.innerHTML = linksHtml;
   }
 
-  // មុខងារสำหรับสร้างប៊ូតុង Navigation
+  // មុខងារសម្រាប់បង្កើតប៊ូតុង Navigation
   function renderNavButtons() {
     let buttonsHtml = "";
     for (const key in data) {
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // --- ส่วนจัดการ Theme (Dark/Light Mode) ---
+  // --- ផ្នែកគ្រប់គ្រង Theme (Dark/Light Mode) ---
   const updateThemeIcons = (isDarkMode) => {
     sunIcon.style.display = isDarkMode ? "none" : "block";
     moonIcon.style.display = isDarkMode ? "block" : "none";
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   themeToggle.addEventListener("click", toggleTheme);
 
-  // --- ส่วนจัดการ Search & Back to Top ---
+  // --- ផ្នែកគ្រប់គ្រង Search & Back to Top ---
   function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
     const navButtons = document.querySelectorAll(".nav-button");
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
   backToTopBtn.addEventListener("click", scrollToTop);
 
-  // เริ่มการทำงานทั้งหมด
+  // ចាប់ផ្តើមដំណើរការទាំងអស់
   function initializeApp() {
     renderNavButtons();
     renderLinks(activeGroupKey);
