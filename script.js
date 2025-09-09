@@ -64,15 +64,12 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "ការណែនាំផ្សេងៗ",
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
       links: [
-        { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
-        {
-          name: "របៀបសុំច្បាប់ឈប់សម្រាក",
-          url: "https://youtu.be/ZeXD2ibq6co?si=Z9fMFWk05LCzTeDk", // << ដាក់ Link YouTube ធម្មតាវិញ
-        },
-        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM" },
+           { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
+           {name: "របៀបសុំច្បាប់ឈប់សម្រាក", url: "https://youtu.be/ZeXD2ibq6co?si=Z9fMFWk05LCzTeDk",},
+        ​​​   { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM" },
+          { name: "របៀបរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
       ],
-        { name: "របៀបរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
-      ],
+    },
     },
   };
 
