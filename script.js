@@ -6,23 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const sunIcon = document.querySelector(".sun-icon");
   const moonIcon = document.querySelector(".moon-icon");
 
-  // ទិន្នន័យ Link ទាំងអស់ (បានរៀបចំទីតាំង និង ប្តូរឈ្មោះ)
+  // ទិន្នន័យ Link ទាំងអស់
   const data = {
     bot: {
       name: "Telegram Bot",
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="12" width="16" height="8" rx="2"/><path d="M2 12h20"/><path d="M17.5 12V8a.5.5 0 0 0-.5-.5h-10a.5.5 0 0 0-.5.5v4"/></svg>`,
       links: [
         { name: "Chart Bot", url: "https://t.me/NewFormDI_bot" },
-        //======= កូដថ្មីដែលបានបន្ថែម =======
         { name: "ច្បាប់ចេញក្រៅ", url: "https://t.me/PermisstionDI_bot" },
         { name: "ច្បាប់ឈប់សម្រាក", url: "https://t.me/LEPermisstionDI_bot" },
-        //==================================
       ],
     },
     system: {
       name: "ប្រព័ន្ធ",
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="14" x2="21" y2="3"></line><path d="M21 3L11 3L11 14L21 3 Z"></path><path d="M21 14l-4 4h-7a4 4 0 0 1-4-4V5a4 4 0 0 1 4-4h11"></path></svg>`,
-      links: [{ name: "ប្រព័ន្ធវត្តមាន", url: "https://script.google.com/macros/s/AKfycbwzoUILD8sccXGtPLAcAgfAx-lrqAvnxKV4W2MJ6_jK5z9I0IqC6WJQu1kEe6whd1cC/exec" }],
+      links: [
+        {
+          name: "ប្រព័ន្ធវត្តមាន",
+          url: "https://script.google.com/macros/s/AKfycbwzoUILD8sccXGtPLAcAgfAx-lrqAvnxKV4W2MJ6_jK5z9I0IqC6WJQu1kEe6whd1cC/exec",
+        },
+      ],
     },
     personal: {
       name: "ក្រុមការងារពិសេស",
@@ -57,20 +60,36 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
       links: [{ name: "ក្រុមការងារ", url: "https://t.me/ITSupportKR" }],
     },
+    //======= Group ថ្មីដែលបានបន្ថែមចុងក្រោយ =======
+    guides: {
+      name: "ការណែនាំផ្សេងៗ",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
+      links: [
+        { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
+        {
+          name: "របៀបសុំច្បាប់ឈប់សម្រាប់",
+          url: "https://youtube.com/shorts/FSbOUVv3SRI?si=MuR3lcz-t4trIlLj",
+        },
+        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្ត(ឆាប់ៗនេះ)", url: "#" },
+      ],
+    },
+    //===========================================
   };
 
-  // ត្រួតពិនិត្យថាធាតុសំខាន់ៗមានពិតប្រាកដមែន
   const groupNav = document.getElementById("group-nav");
   const linkBox = document.getElementById("link-box");
+  const searchInput = document.getElementById("searchInput");
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  let activeGroupKey = "bot"; // រក្សាទុក group ដែលកំពុង active
 
   if (!groupNav || !linkBox) {
     console.error(
-      "Critical HTML elements 'group-nav' or 'link-box' not found. Please check your index.html file."
+      "Critical HTML elements 'group-nav' or 'link-box' not found."
     );
-    return; // បញ្ឈប់កូដ ប្រសិនបើរកធាតុមិនឃើញ
+    return;
   }
 
-  // មុខងារសម្រាប់បង្ហាញ Links (បានកែសម្រួលដើម្បីបង្ហាញតួនាទី)
+  // មុខងារសម្រាប់បង្ហាញ Links
   function renderLinks(groupKey) {
     const group = data[groupKey];
     if (!group) return;
@@ -82,16 +101,16 @@ document.addEventListener("DOMContentLoaded", function () {
           : "";
 
         return `
-              <a href="${link.url}" class="link-item" target="_blank" rel="noopener noreferrer">
-                  <div class="icon-wrapper">
-                      ${group.icon}
-                  </div>
-                  <div class="link-item-details">
-                      <span class="link-item-name">${link.name}</span>
-                      ${roleHtml}
-                  </div>
-              </a>
-              `;
+            <a href="${link.url}" class="link-item" target="_blank" rel="noopener noreferrer">
+                <div class="icon-wrapper">
+                    ${group.icon}
+                </div>
+                <div class="link-item-details">
+                    <span class="link-item-name">${link.name}</span>
+                    ${roleHtml}
+                </div>
+            </a>
+        `;
       })
       .join("");
 
@@ -103,11 +122,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let buttonsHtml = "";
     for (const key in data) {
       buttonsHtml += `
-                  <button class="nav-button" data-group="${key}">
-                      ${data[key].icon}
-                      <span>${data[key].name}</span>
-                  </button>
-              `;
+          <button class="nav-button" data-group="${key}">
+              ${data[key].icon}
+              <span>${data[key].name}</span>
+          </button>
+      `;
     }
     groupNav.innerHTML = buttonsHtml;
 
@@ -116,11 +135,14 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", () => {
         navButtons.forEach((btn) => btn.classList.remove("active"));
         button.classList.add("active");
-        renderLinks(button.dataset.group);
+
+        activeGroupKey = button.dataset.group; // Update active group
+        renderLinks(activeGroupKey);
+
+        searchInput.value = ""; // Clear search input ពេលប្តូរ group
       });
     });
 
-    // កំណត់ឲ្យប៊ូតុងដំបូង active
     if (navButtons.length > 0) {
       navButtons[0].classList.add("active");
     }
@@ -131,7 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
     sunIcon.style.display = isDarkMode ? "none" : "block";
     moonIcon.style.display = isDarkMode ? "block" : "none";
   };
-
   const applyTheme = (theme) => {
     if (theme === "dark") {
       body.classList.add("dark-theme");
@@ -141,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
       updateThemeIcons(false);
     }
   };
-
   const toggleTheme = () => {
     const currentTheme = body.classList.contains("dark-theme")
       ? "light"
@@ -149,26 +169,92 @@ document.addEventListener("DOMContentLoaded", function () {
     applyTheme(currentTheme);
     localStorage.setItem("theme", currentTheme);
   };
-
-  // ពិនិត្យ Theme ដែលបានរក្សាទុក ឬកំណត់តាមពេលវេលា
   const initializeTheme = () => {
     const savedTheme = localStorage.getItem("theme");
     const hour = new Date().getHours();
     const isNight = hour < 6 || hour >= 18;
-
     if (savedTheme) {
       applyTheme(savedTheme);
     } else {
       applyTheme(isNight ? "dark" : "light");
     }
   };
-
   themeToggle.addEventListener("click", toggleTheme);
+
+  // --- ផ្នែកគ្រប់គ្រង Search & Back to Top ---
+
+  // មុខងារសម្រាប់ Search
+  function handleSearch() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const navButtons = document.querySelectorAll(".nav-button");
+
+    if (!searchTerm) {
+      // បើ search box ទំនេរ, បង្ហាញ group ដែល active ឡើងវិញ
+      renderLinks(activeGroupKey);
+      navButtons.forEach((btn) => {
+        if (btn.dataset.group === activeGroupKey) {
+          btn.classList.add("active");
+        }
+      });
+      return;
+    }
+
+    // ដោះ active class ចេញពីប៊ូតុងទាំងអស់ពេលកំពុង search
+    navButtons.forEach((btn) => btn.classList.remove("active"));
+
+    let searchResultsHtml = "";
+    for (const groupKey in data) {
+      const group = data[groupKey];
+      group.links.forEach((link) => {
+        if (link.name.toLowerCase().includes(searchTerm)) {
+          const roleHtml = link.role
+            ? `<span class="link-item-role">តួនាទី : ${link.role}</span>`
+            : "";
+          searchResultsHtml += `
+              <a href="${link.url}" class="link-item" target="_blank" rel="noopener noreferrer">
+                  <div class="icon-wrapper">
+                      ${group.icon}
+                  </div>
+                  <div class="link-item-details">
+                      <span class="link-item-name">${link.name}</span>
+                      ${roleHtml}
+                  </div>
+              </a>
+          `;
+        }
+      });
+    }
+
+    linkBox.innerHTML =
+      searchResultsHtml || "<p class='no-results'>រកមិនឃើញលទ្ធផលទេ។</p>";
+  }
+
+  // មុខងារសម្រាប់ Back to Top Button
+  function handleScroll() {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  }
+
+  function scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
+  // បន្ថែម Event Listeners សម្រាប់មុខងារថ្មី
+  searchInput.addEventListener("input", handleSearch);
+  window.addEventListener("scroll", handleScroll);
+  backToTopBtn.addEventListener("click", scrollToTop);
 
   // ចាប់ផ្តើមដំណើរការទាំងអស់
   function initializeApp() {
     renderNavButtons();
-    renderLinks("bot"); // បង្ហាញ Group ដំបូង 'bot'
+    renderLinks(activeGroupKey); // បង្ហាញ Group ដំបូង
     initializeTheme();
   }
 
