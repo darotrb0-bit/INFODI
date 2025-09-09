@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://www.youtube.com/embed/VIDEO_ID9" },
 
         // --- បន្ថែម Item ថ្មីចំនួន 5 នៅត្រង់នេះ ---
-        { name: "របៀបបង្កើតគណនីប្រព័ន្ធគ្រប់គ្រងវត្តមាន(ឆាប់ៗនេះ)", url: "#" },
+        { name: "របៀបចុះឈ្មោះរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
       ],
     },
 
