@@ -38,11 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
           url: "https://t.me/roeurnsreyneth",
           role: "រដ្ឋបាល និង បច្ចេកទេស",
         },
-        {
-          name: "ប៉ី ថាវរី",
-          url: "https://t.me/Peythavry",
-          role: "ជំនួយរដ្ឋបាល",
-        },
+        { name: "ប៉ី ថាវរី", url: "https://t.me/Peythavry", role: "ជំនួយរដ្ឋបាល" },
         {
           name: "សយ គឹមសុដានី",
           url: "https://t.me/Soykeomsodany",
@@ -68,14 +64,18 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
         {
           name: "របៀបសុំច្បាប់ឈប់សម្រាក",
-          url: "https://youtu.be/ZeXD2ibq6co?si=L24i-TNHESZUK-Rx",
+          url: "https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE0",
         },
-        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://www.youtube.com/embed/VIDEO_ID9" },
+        {
+          name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន",
+          url: "https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE1",
+        },
 
         // --- បន្ថែម Item ថ្មីចំនួន 5 នៅត្រង់នេះ ---
-        { name: "របៀបចុះឈ្មោះរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
+        { name: "របៀបបរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
       ],
     },
+  };
 
   const groupNav = document.getElementById("group-nav");
   const linkBox = document.getElementById("link-box");
