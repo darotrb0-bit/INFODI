@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
           name: "របៀបសុំច្បាប់ឈប់សម្រាក",
           url: "https://www.youtube.com/embed/VIDEO_ID4",
         },
-        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្ត(ឆាប់ៗនេះ)", url: "#" },
+        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM?si=fmBpk_ANZ-0Yht3W" },
       ],
     },
   };
