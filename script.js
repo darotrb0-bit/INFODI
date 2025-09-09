@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     system: {
       name: "ប្រព័ន្ធ",
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="14" x2="21" y2="3"></line><path d="M21 3L11 3L11 14L21 3 Z"></path><path d="M21 14l-4 4h-7a4 4 0 0 1-4-4V5a4 4 0 0 1 4-4h11"></path></svg>`,
-      links: [{ name: " (មកដល់ឆាប់ៗនេះ!)", url: "#" }],
+      links: [{ name: "ប្រព័ន្ធវត្តមាន", url: "https://script.google.com/macros/s/AKfycbwzoUILD8sccXGtPLAcAgfAx-lrqAvnxKV4W2MJ6_jK5z9I0IqC6WJQu1kEe6whd1cC/exec" }],
     },
     personal: {
       name: "ក្រុមការងារពិសេស",
