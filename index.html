@@ -19,6 +19,11 @@
           class="logo"
         />
         <h1>ព័ត៌មាន ឧស្សាហកម្មឌីជីថល</h1>
+
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="ស្វែងរក..." />
+        </div>
+
         <button
           class="theme-toggle-button"
           id="theme-toggle"
@@ -94,5 +99,14 @@
     </div>
 
     <script src="script.js"></script>
+
+    <button id="backToTopBtn" title="ទៅខាងលើ">▲</button>
+
+    <div id="videoModal" class="video-modal-overlay">
+      <div class="video-modal-content">
+        <button class="close-modal-btn" title="បិទ">×</button>
+        <div id="videoFrameContainer" class="video-frame"></div>
+      </div>
+    </div>
   </body>
 </html>
