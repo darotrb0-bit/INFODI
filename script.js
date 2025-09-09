@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
           name: "របៀបសុំច្បាប់ឈប់សម្រាប់",
           url: "https://youtu.be/ZeXD2ibq6co?si=hCffpKldl28vmGip", 
         },
-        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្ត", url: "https://youtu.be/RNw7d4j9BPM" },
+        { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM" },
 
         // --- បន្ថែម Item ថ្មីចំនួន 5 នៅត្រង់នេះ ---
         { name: "A...", url: "ដាក់ Link នៅទីនេះ" },
