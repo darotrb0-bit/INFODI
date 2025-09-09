@@ -61,14 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
       links: [
         // --- Item ដែលមានស្រាប់ ---
-        { name: "របៀបសុំច្បាប់ចេញក្រៅ(ឆាប់ៗនេះ)", url: "#" },
+        { name: "របៀបសុំច្បាប់ចេញក្រៅ", url: "https://youtu.be/4jsgGXezbTg?si=g_9fx21L_X_eI_2F" },
         {
           name: "របៀបសុំច្បាប់ឈប់សម្រាក",
-          url: "https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE0",
+          url: "https://youtu.be/ZeXD2ibq6co?si=kCiA34p7AtAA0wsF",
         },
         {
           name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន",
-          url: "https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE1",
+          url: "https://youtu.be/RNw7d4j9BPM?si=AmiXFwAByBguO4-a",
         },
 
         // --- បន្ថែម Item ថ្មីចំនួន 5 នៅត្រង់នេះ ---
