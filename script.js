@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "សុំច្បាប់ចេញក្រៅ || របៀបបញ្ជាក់ការចូលមកវិញ", url: "https://youtube.com/shorts/zSethIaD2pg?feature=share" },
         { name: "របៀបសុំច្បាប់ឈប់សម្រាក", url: "https://youtu.be/ZeXD2ibq6co?si=kCiA34p7AtAA0wsF" },
         { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM?si=AmiXFwAByBguO4-a" },
-        { name: "របៀបបរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
       ],
     },
     personal: {
