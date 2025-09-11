@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
       links: [
         { name: "របៀបសុំច្បាប់ចេញក្រៅ", url: "https://youtu.be/4jsgGXezbTg?si=g_9fx21L_X_eI_2F" },
-        { name: "សុំច្បាប់ចេញក្រៅ || របៀបបញ្ជាក់ការចូលមកវិញ", url: "#" },
+        { name: "សុំច្បាប់ចេញក្រៅ || របៀបបញ្ជាក់ការចូលមកវិញ", url: "https://youtube.com/shorts/wPsdiChLu9o?feature=share" },
         { name: "របៀបសុំច្បាប់ឈប់សម្រាក", url: "https://youtu.be/ZeXD2ibq6co?si=kCiA34p7AtAA0wsF" },
         { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM?si=AmiXFwAByBguO4-a" },
         { name: "របៀបបរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
