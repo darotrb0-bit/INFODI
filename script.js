@@ -30,6 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
           name: "ប្រព័ន្ធវត្តមាន",
           url: "https://script.google.com/macros/s/AKfycbwzoUILD8sccXGtPLAcAgfAx-lrqAvnxKV4W2MJ6_jK5z9I0IqC6WJQu1kEe6whd1cC/exec",
         },
+        {
+          name: "កម្មវិធីទិន្នន័យរបស់ខ្ញុំ (មកដល់ឆាប់ៗនេះៗ!)",
+          url: "#",
+        },
+        {
+          name: "ប្រព័ន្ធស្នើច្បាប់ចេញក្រៅស្វ័យប្រវត្តពេញលេញ (មកដល់ឆាប់ៗនេះ!)",
+          url: "#",
+        },
       ],
     },
     guides: {
