@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
       links: [
         { name: "របៀបសុំច្បាប់ចេញក្រៅ", url: "https://youtu.be/4jsgGXezbTg?si=g_9fx21L_X_eI_2F" },
+        { name: "សុំច្បាប់ចេញក្រៅ || របៀបបញ្ជាក់ការចូលមកវិញ", url: "#" },
         { name: "របៀបសុំច្បាប់ឈប់សម្រាក", url: "https://youtu.be/ZeXD2ibq6co?si=kCiA34p7AtAA0wsF" },
         { name: "របៀបបង្កើតគណនីប្រព័ន្ធវត្តមាន", url: "https://youtu.be/RNw7d4j9BPM?si=AmiXFwAByBguO4-a" },
         { name: "របៀបបរក្សាទុកអ៊ីម៉ែលក្នុងប្រព័ន្ធ(ឆាប់ៗនេះ)", url: "#" },
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
       links: [
         { name: "ប៊ន ចន្ថា", url: "https://t.me/Ch_Tha002", role: "បច្ចេកទេស" },
-        { name: "ឡោក ឆាណុន", url: "https://t.me/Maanon885", role: "បច្ចេកទេស" },
+        { name: "ឡោក ឆាណុន", url: "https://t.me/Maanon_CH", role: "បច្ចេកទេស" },
         { name: "រឿន ស្រីណែត", url: "https://t.me/roeurnsreyneth", role: "រដ្ឋបាល និង បច្ចេកទេស" },
         { name: "ប៉ី ថាវរី", url: "https://t.me/Peythavry", role: "ជំនួយរដ្ឋបាល" },
         { name: "សយ គឹមសុដានី", url: "https://t.me/Soykeomsodany", role: "ជំនួយរដ្ឋបាល" },
